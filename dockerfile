@@ -6,15 +6,14 @@ ENV PIP_NO_CACHE_DIR=1 \
 
 WORKDIR /app
 
-# System deps only if required
+# Install ONLY required system libs
 RUN apt-get update && apt-get install -y \
-    gcc \
     libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 
-# CRITICAL LINE
+# 🚨 CRITICAL: no cache, single layer
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
