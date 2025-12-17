@@ -1,10 +1,10 @@
-Flask==3.1.2
-gunicorn==23.0.0
+Flask==2.3.3
+gunicorn==20.1.0
 
-easyocr==1.7.2
-torch==2.9.1
-torchvision==0.24.1
+easyocr==1.7.1        # slightly older, smaller model footprint
+torch==2.1.0+cpu      # CPU-only version, much smaller
+torchvision==0.15.2+cpu  # CPU-only version to match torch
 
-numpy==2.2.6
-pillow==12.0.0
-opencv-python-headless==4.12.0.88
+numpy==1.25.0         # older, stable, smaller than latest 2.x
+pillow==9.5.0         # lightweight version
+opencv-python-headless==4.8.1.74  # stable, small
